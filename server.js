@@ -1,10 +1,15 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT; // 🔹 Apenas a porta do Render
 
 app.use(express.json());
 
-// 🔹 Rota de saúde (já deve existir)
+// 🔹 Rota de saúde (teste rápido)
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
+// 🔹 Rota de ping
 app.get("/ping", (req, res) => {
   res.send("pong");
 });
@@ -36,5 +41,5 @@ app.post("/pagamento", (req, res) => {
 
 // 🚀 Inicia o servidor
 app.listen(PORT, () => {
-  console.log(`Backend ouvindo na porta ${PORT}`);
+  console.log(`✅ Backend rodando na porta ${PORT}`);
 });
