@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT; // 🔹 Apenas a porta do Render
+
+// 🔹 Usa a porta do Render ou 10000 localmente
+const PORT = process.env.PORT || 10000;
 
 app.use(express.json());
 
